@@ -4,4 +4,8 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+header__title {
+  background-color: white;
 }/*# sourceMappingURL=styles.css.map */
