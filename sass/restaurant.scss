@@ -1,0 +1,86 @@
+main img {
+  max-width: 1440px;
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+  border: 2px solid blue;
+  z-index: 0;
+}
+main {
+  position: relative;
+}
+.main__container {
+  width: 100%;
+  background-color: $color-principal;
+  border-radius: 30px 30px 0 0;
+  transform: translateY(-50px);
+}
+.main__container h2 {
+  font-family: "shrikhand", sans-serif;
+  font-weight: 500;
+  margin: 20px 0 40px 15px;
+}
+.card_restaurant {
+  border: 2px solid red;
+  @include card_restaurant;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &_txt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.card_restaurant h4 {
+  padding: 0 10px 0 10px;
+}
+.card_restaurant_txt {
+  padding: 0 10px 0 10px;
+}
+
+.plats {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  &__title {
+    border: 2px solid blue;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-left: 15px;
+    text-decoration: underline $color-lightGreen;
+  }
+}
+.commander {
+  @include button__commander;
+}
+.progress__check {
+  border: 2px solid magenta;
+  width: 349px;
+  height: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  &__bar {
+    width: 59px;
+    height: 69px;
+    background-color: $color-lightGreen;
+    transform: scaleX(0);
+  }
+}
+
+.card_restaurant {
+  &:active {
+    & + .progress__check {
+      & > .progress__check__bar {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

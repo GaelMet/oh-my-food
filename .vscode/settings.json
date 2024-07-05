@@ -1,0 +1,14 @@
+{
+  "liveSassCompile.settings.useNewCompiler": true,
+  "liveSassCompile.settings.autoprefix": [],
+  "liveSassCompile.settings.compileOnWatch": false,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": null,
+      "savePathReplacementPairs": ""
+    }
+  ],
+  "liveSassCompile.settings.forceBaseDirectory": "/scss"
+}
