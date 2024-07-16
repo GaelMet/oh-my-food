@@ -83,8 +83,12 @@ body {
   height: auto;
   background-color: $color-principal;
   @include flex-start;
-  gap: 18px;
   margin-bottom: 18px;
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
 }
 .restaurants h2 {
   border: 2px solid pink;

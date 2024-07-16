@@ -135,6 +135,39 @@ main {
   margin: 20px 0 40px 15px;
 }
 
+.card_container {
+  position: relative;
+  text-align: justify;
+}
+.card_container__title {
+  border: 2px solid pink;
+  flex-grow: 1;
+  text-align: justify;
+}
+.card_container__txt {
+  border: 2px solid pink;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 7px;
+}
+.card_container__check {
+  border: 2px solid yellow;
+  width: 0;
+  height: 100%;
+  background-color: #99e2d0;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.5s ease-out;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
 .card_restaurant {
   border: 2px solid red;
   width: 349px;
@@ -142,21 +175,27 @@ main {
   background-color: #ffffff;
   border-radius: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.card_restaurant_txt {
-  display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.5s ease-out;
 }
 
-.card_restaurant h4 {
-  padding: 0 10px 0 10px;
+.card_container__check i {
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
 
-.card_restaurant_txt {
-  padding: 0 10px 0 10px;
+input[type=checkbox]:checked + .card_restaurant .card_container__check {
+  width: 20%; /* 20% de la largeur totale */
+}
+
+input[type=checkbox]:checked + .card_restaurant .card_container__check i {
+  opacity: 1;
 }
 
 .plats {
@@ -186,25 +225,6 @@ main {
   border: none;
   background: linear-gradient(#9356dc, #ff79da);
   color: #ffffff;
-}
-
-.progress__check {
-  border: 2px solid magenta;
-  width: 349px;
-  height: 69px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.progress__check__bar {
-  width: 59px;
-  height: 69px;
-  background-color: #99e2d0;
-  transform: scaleX(0);
-}
-
-.card_restaurant:active + .progress__check > .progress__check__bar {
-  transform: scaleX(1);
 }
 
 * {
@@ -323,8 +343,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
   margin-bottom: 18px;
+}
+.restaurants__card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .restaurants h2 {

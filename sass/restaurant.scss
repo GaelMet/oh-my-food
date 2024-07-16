@@ -20,23 +20,60 @@ main {
   font-weight: 500;
   margin: 20px 0 40px 15px;
 }
+.card_container {
+  position: relative;
+  text-align: justify;
+  &__title {
+    border: 2px solid pink;
+    flex-grow: 1;
+    text-align: justify;
+  }
+  &__txt {
+    border: 2px solid pink;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 7px;
+  }
+  &__check {
+    border: 2px solid yellow;
+    width: 0;
+    height: 100%;
+    background-color: $color-lightGreen;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.5s ease-out;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+input[type="checkbox"] {
+  display: none;
+}
 .card_restaurant {
   border: 2px solid red;
   @include card_restaurant;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  &_txt {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.5s ease-out;
 }
-.card_restaurant h4 {
-  padding: 0 10px 0 10px;
+.card_container__check i {
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
-.card_restaurant_txt {
-  padding: 0 10px 0 10px;
+input[type="checkbox"]:checked + .card_restaurant .card_container__check {
+  width: 20%; /* 20% de la largeur totale */
+}
+
+input[type="checkbox"]:checked + .card_restaurant .card_container__check i {
+  opacity: 1;
 }
 
 .plats {
@@ -59,28 +96,4 @@ main {
 }
 .commander {
   @include button__commander;
-}
-.progress__check {
-  border: 2px solid magenta;
-  width: 349px;
-  height: 69px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  &__bar {
-    width: 59px;
-    height: 69px;
-    background-color: $color-lightGreen;
-    transform: scaleX(0);
-  }
-}
-
-.card_restaurant {
-  &:active {
-    & + .progress__check {
-      & > .progress__check__bar {
-        transform: scaleX(1);
-      }
-    }
-  }
 }
