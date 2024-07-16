@@ -3,6 +3,7 @@ header {
   width: 100%;
 }
 .header {
+  border: 2px solid yellow;
   height: 63px;
   @include column-center;
   &__title {
