@@ -1,12 +1,11 @@
-/*font-family*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 /*import*/
-@import "./viariable";
-@import "./mixins";
-@import "./header";
-@import "./footer";
-@import "./restaurant";
+@import "Utils/viariable";
+@import "Utils/mixins";
+@import "Layouts/header";
+@import "Layouts/footer";
+@import "Restaurant/restaurant";
+@import "Base/general";
+
 * {
   padding: 0;
   margin: 0;
@@ -42,11 +41,11 @@ body {
 }
 
 .menu {
-  border: 2px solid red;
   max-width: 768px;
   width: 100%;
   height: auto;
   padding-bottom: 50px;
+  background-color: white;
   &__title {
     padding: 30px 0 10px 20px;
   }
@@ -77,7 +76,6 @@ body {
 }
 
 .restaurants {
-  border: 2px solid green;
   max-width: 768px;
   width: 100%;
   height: auto;
@@ -91,7 +89,6 @@ body {
   }
 }
 .restaurants h2 {
-  border: 2px solid pink;
   width: 100%;
 }
 .cards-row {
@@ -101,7 +98,6 @@ body {
 }
 
 .cards {
-  border: 2px solid magenta;
   @include cards;
   background-color: white;
 
@@ -115,7 +111,6 @@ body {
     padding: 10px 0 10px 10px;
   }
   .cards__title {
-    border: 2px solid yellow;
     display: flex;
     justify-content: space-between;
   }
