@@ -45,8 +45,8 @@
   align-items: center;
   justify-content: space-between;
 }
-@mixin shadow {
-  box-shadow: 8px 8px 10px rgba(97, 96, 96, 0.5);
+@mixin shadow_filtre {
+  box-shadow: 8px 8px 10px rgba(97, 96, 96, 0.2);
 }
 
 @mixin button {
@@ -59,19 +59,15 @@
   color: $color-secondary;
 }
 @mixin button-choice {
-  width: 335px;
+  width: 100%;
   height: 72px;
   border-radius: 20px;
-  border: none;
+  padding-left: 50px;
+  gap: 20px;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
+
   background-color: $color-principal;
-  padding-left: 30px;
-  font-size: 16px;
-  font-weight: 500;
 }
 
 @mixin cards {

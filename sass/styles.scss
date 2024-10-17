@@ -39,13 +39,17 @@ body {
 .main > button {
   @include button;
 }
+.fa-store {
+  color: $color-purple;
+}
 
 .menu {
   max-width: 768px;
   width: 100%;
   height: auto;
-  padding-bottom: 50px;
+  padding: 20px;
   background-color: white;
+  padding: 20px 20px 60px 20px;
   &__title {
     padding: 30px 0 10px 20px;
   }
@@ -56,12 +60,12 @@ body {
   position: relative;
   &__filtre {
     @include button-choice;
-    @include shadow;
+    @include shadow_filtre;
     z-index: 0;
   }
 }
 .category__item {
-  position: relative;
+  width: 100%;
 }
 
 .category > button .fa-solid {
@@ -74,22 +78,44 @@ body {
   bottom: -50px;
   z-index: 1;
 }
+.new {
+  width: 80px;
+  height: 29px;
+  background-color: $color-lightGreen;
+  position: absolute;
+  z-index: 1;
+  margin: 10px 10px 0 250px;
+  p {
+    color: $color-green;
+    font-size: 14px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    padding-top: 5px;
+  }
+}
 
 .restaurants {
   max-width: 768px;
   width: 100%;
   height: auto;
   background-color: $color-principal;
+  padding: 50px 0 70px 0;
   @include flex-start;
-  margin-bottom: 18px;
   &__card {
     display: flex;
     flex-direction: column;
     gap: 18px;
   }
 }
+.restaurants__card a {
+  text-decoration: none;
+  color: black; //penser a le mettre en sass au dessus//
+}
 .restaurants h2 {
   width: 100%;
+  padding: 0 0 20px 20px;
 }
 .cards-row {
   display: flex;
@@ -106,6 +132,7 @@ body {
     height: 188px;
     border-radius: 15px 15px 0 0;
     object-fit: cover;
+    z-index: 2;
   }
   .cards__txt {
     padding: 10px 0 10px 10px;
@@ -113,9 +140,46 @@ body {
   .cards__title {
     display: flex;
     justify-content: space-between;
+    padding-right: 10px;
   }
 }
+.heart_container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+}
+input.checkbox {
+  position: relative;
+}
+.heart-icon {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.heart-full {
+  position: absolute;
+  color: rgba(147, 86, 220, 1);
+  opacity: 0;
+  top: 10px;
+  right: 0;
+  transition: opacity 0.3s ease;
+}
+input.checkbox:checked + .heart-icon {
+  opacity: 0;
+} //pour cacher le coeur vide//
+input.checkbox:checked ~ .heart-full {
+  animation: click_heart 0.3 forwards;
+  // forwards pour remplir le coeur permanent//
+}
 
+@keyframes click_heart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 768px) {
   .main {
     max-width: 1440px;

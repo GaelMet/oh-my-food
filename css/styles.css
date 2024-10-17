@@ -9,7 +9,6 @@ header {
 }
 
 .header {
-  border: 2px solid red;
   height: 63px;
   display: flex;
   flex-direction: column;
@@ -33,12 +32,14 @@ header {
 
 .header__search {
   background-color: #eaeaea;
+  box-shadow: inset 0 4px 5px rgba(168, 170, 168, 0.4), 0 4px 5px rgba(153, 153, 153, 0.688);
   height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  box-shadow: 8px 8px 10px rgba(97, 96, 96, 0.5);
+  position: relative;
+  z-index: 10;
 }
 .header__search__txt {
   color: #353535;
@@ -60,24 +61,22 @@ header {
   }
 }
 footer {
-  border: 2px solid green;
   max-width: 768px;
   width: 100%;
   height: 186px;
   background-color: #353535;
   color: #ffffff;
-  padding-left: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .footer h4 {
   width: 100%;
-  border: 2px solid green;
   font-family: "shrikhand", sans-serif;
   font-size: 18px;
   font-weight: 200;
-  display: flex;
-  justify-content: flex-start;
-  padding: 10px 0 10px 0;
 }
 
 .footer__txt > p {
@@ -114,7 +113,6 @@ main img {
   width: 100%;
   height: 275px;
   object-fit: cover;
-  border: 2px solid yellow;
   z-index: 0;
 }
 
@@ -334,12 +332,17 @@ body {
   color: #ffffff;
 }
 
+.fa-store {
+  color: #9356dc;
+}
+
 .menu {
   max-width: 768px;
   width: 100%;
   height: auto;
-  padding-bottom: 50px;
+  padding: 20px;
   background-color: white;
+  padding: 20px 20px 60px 20px;
 }
 .menu__title {
   padding: 30px 0 10px 20px;
@@ -353,25 +356,20 @@ body {
   position: relative;
 }
 .category__filtre {
-  width: 335px;
+  width: 100%;
   height: 72px;
   border-radius: 20px;
-  border: none;
+  padding-left: 50px;
+  gap: 20px;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
   background-color: #f3f3f3;
-  padding-left: 30px;
-  font-size: 16px;
-  font-weight: 500;
-  box-shadow: 8px 8px 10px rgba(97, 96, 96, 0.5);
+  box-shadow: 8px 8px 10px rgba(97, 96, 96, 0.2);
   z-index: 0;
 }
 
 .category__item {
-  position: relative;
+  width: 100%;
 }
 
 .category > button .fa-solid {
@@ -394,16 +392,32 @@ body {
   z-index: 1;
 }
 
+.new {
+  width: 80px;
+  height: 29px;
+  background-color: #99e2d0;
+  position: absolute;
+  z-index: 1;
+  margin: 10px 10px 0 250px;
+}
+.new p {
+  color: #008766;
+  font-size: 14px;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding-top: 5px;
+}
+
 .restaurants {
   max-width: 768px;
   width: 100%;
   height: auto;
   background-color: #f3f3f3;
+  padding: 50px 0 70px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
 }
 .restaurants__card {
   display: flex;
@@ -411,8 +425,14 @@ body {
   gap: 18px;
 }
 
+.restaurants__card a {
+  text-decoration: none;
+  color: black;
+}
+
 .restaurants h2 {
   width: 100%;
+  padding: 0 0 20px 20px;
 }
 
 .cards-row {
@@ -432,6 +452,7 @@ body {
   height: 188px;
   border-radius: 15px 15px 0 0;
   object-fit: cover;
+  z-index: 2;
 }
 .cards .cards__txt {
   padding: 10px 0 10px 10px;
@@ -439,8 +460,50 @@ body {
 .cards .cards__title {
   display: flex;
   justify-content: space-between;
+  padding-right: 10px;
 }
 
+.heart_container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+input.checkbox {
+  position: relative;
+}
+
+.heart-icon {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.heart-full {
+  position: absolute;
+  color: rgb(147, 86, 220);
+  opacity: 0;
+  top: 10px;
+  right: 0;
+  transition: opacity 0.3s ease;
+}
+
+input.checkbox:checked + .heart-icon {
+  opacity: 0;
+}
+
+input.checkbox:checked ~ .heart-full {
+  animation: click_heart 0.3 forwards;
+}
+
+@keyframes click_heart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 768px) {
   .main {
     max-width: 1440px;
