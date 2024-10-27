@@ -3,8 +3,9 @@
 @import "Utils/mixins";
 @import "Layouts/header";
 @import "Layouts/footer";
-@import "Restaurant/restaurant";
 @import "Base/general";
+@import "Manger/resto";
+@import "Components/chargement";
 
 * {
   padding: 0;
@@ -12,16 +13,18 @@
   font-family: "roboto", sans-serif;
   box-sizing: border-box;
 }
-body {
-  width: 100%;
+html {
+  height: 100%;
+}
+.main__container__index {
   max-width: 1440px;
-  height: auto;
+  width: 100%;
   margin: 0 auto;
 }
 
 .main {
   background-color: $color-principal;
-  max-width: 768px;
+
   height: 287px;
   @include column-center;
   &__title {
@@ -44,15 +47,19 @@ body {
 }
 
 .menu {
-  max-width: 768px;
   width: 100%;
   height: auto;
   padding: 20px;
   background-color: white;
   padding: 20px 20px 60px 20px;
   &__title {
-    padding: 30px 0 10px 20px;
+    padding: 30px 0 10px 10px;
   }
+}
+
+.restaurant__Title {
+  width: 100%;
+  max-width: 1080px;
 }
 .category {
   @include column;
@@ -78,13 +85,14 @@ body {
   bottom: -50px;
   z-index: 1;
 }
+
 .new {
   width: 80px;
   height: 29px;
   background-color: $color-lightGreen;
-  position: absolute;
+
   z-index: 1;
-  margin: 10px 10px 0 250px;
+
   p {
     color: $color-green;
     font-size: 14px;
@@ -97,12 +105,12 @@ body {
 }
 
 .restaurants {
-  max-width: 768px;
   width: 100%;
   height: auto;
   background-color: $color-principal;
-  padding: 50px 0 70px 0;
-  @include flex-start;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
   &__card {
     display: flex;
     flex-direction: column;
@@ -129,13 +137,12 @@ body {
 
   &__img > img {
     width: 100%;
-    height: 188px;
+    height: 170px;
     border-radius: 15px 15px 0 0;
     object-fit: cover;
-    z-index: 2;
   }
   .cards__txt {
-    padding: 10px 0 10px 10px;
+    padding: 10px;
   }
   .cards__title {
     display: flex;
@@ -143,14 +150,28 @@ body {
     padding-right: 10px;
   }
 }
+.etiquette__new {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  right: 10px;
+  z-index: 10;
+}
+
+.cards__img {
+  position: relative;
+}
 .heart_container {
   display: inline-block;
   position: relative;
   cursor: pointer;
-  margin-right: 10px;
 }
 input.checkbox {
   position: relative;
+  display: none;
 }
 .heart-icon {
   position: relative;
@@ -158,9 +179,9 @@ input.checkbox {
 }
 .heart-full {
   position: absolute;
-  color: rgba(147, 86, 220, 1);
+  color: rgb(143, 6, 136);
   opacity: 0;
-  top: 10px;
+  top: 10px; //pour bien superposer le coeur //
   right: 0;
   transition: opacity 0.3s ease;
 }
@@ -181,38 +202,73 @@ input.checkbox:checked ~ .heart-full {
   }
 }
 @media screen and (min-width: 768px) {
-  .main {
+  html {
     max-width: 1440px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  //contenue principal//
+  .header__content,
+  .header__search,
+  .main,
+  .menu,
+  .restaurants {
     width: 100%;
+  }
+  //main//
+  .main {
     height: 238px;
   }
+  //menu//
   .menu {
-    max-width: 1440px;
-    width: 100%;
     padding: 50px 180px 50px 180px;
     &__title {
-      padding: 0 0 0 25px;
+      padding-left: 25px;
     }
   }
   .category {
     margin-top: 25px;
     @include row;
+    gap: 25px;
+  }
+  .restaurant__Title {
+    margin-bottom: 20px;
   }
   .restaurants {
-    max-width: 1440px;
-    width: 100%;
-    padding: 50px 180px 0 180px;
-  }
-  .cards-row {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 100px;
+    h2 {
+      width: 268px;
+      display: flex;
+      justify-content: flex-start;
+      padding: 0;
+    }
+  }
+  .restaurants__card {
+    max-width: 1080px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    row-gap: 40px;
+    column-gap: 80px;
+  }
+
+  .cards {
+    width: 100%;
   }
   .cards-row > .cards {
     width: 490px;
     height: auto;
     margin-bottom: 50px;
+  }
+
+  .new__content {
+    max-width: 115px;
+    justify-content: center;
+    .new {
+      margin-right: 40px;
+    }
   }
 }

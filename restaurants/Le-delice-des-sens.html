@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La palette du gout</title>
-    <link rel="stylesheet" href="/sass/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <script
       src="https://kit.fontawesome.com/918e05f286.js"
       crossorigin="anonymous"
@@ -12,71 +12,213 @@
   </head>
   <body>
     <header>
-      <a href="index.html">
       <div class="header" id="header__page">
-        <i class="fa-solid fa-arrow-left"></i>
-        </a>
-        <div>
+        <div class="navBar_logo">
+          <a class="Chargement_page" href="../sass/Components/chargement.html">
+            <a class="header__link" href="../index.html">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+          </a>
           <h1 class="header__title">ohmyfood</h1>
         </div>
+        <img
+          class="header__img"
+          src="../assets/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+          alt="image plat de restaurant gastronomique"
+        />
       </div>
     </header>
-    <main>
-      <img
-        src="assets/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-        alt=""
-      />
-
+    <main class="main_i">
       <section class="main__container">
-        <div>
+        <div class="main__container__h2">
           <h2>Le délice des sens</h2>
+          <i class="fa-regular fa-heart heart-icon fa-lg"></i>
+          <i class="fa-solid fa-heart heart-full fa-lg"></i>
         </div>
         <!--les entrees-->
         <section class="plats">
           <div class="plats__title"><p>Entrées</p></div>
-          <div class="card_restaurant">
-            <h4>Tartare de thon</h4>
-            <p>Assaisonné au yuzu</p>
+          <div class="Deco__Line__Content"><hr class="deco-line" /></div>
+          <!--1er-->
+          <div class="card_container">
+            <input type="checkbox" id="reserved" />
+            <label for="reserved" class="card_restaurant">
+              <div class="card_container__title">
+                <h4>Tartare de thon</h4>
+                <div class="card_container__txt">
+                  <div class="card_container__content">
+                    <p>Assaisonné au yuzu</p>
+                  </div>
+
+                  <h4>25<i class="fa-solid fa-euro-sign"></i></h4>
+                </div>
+              </div>
+              <div class="card_container__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </label>
           </div>
-          <div class="card_restaurant">
-            <h4>Bouchée de homard croustillant</h4>
-            <p>Et sa farandole de petits légumes</p>
+          <!--2eme-->
+          <div class="card_container">
+            <input type="checkbox" id="reserved_1" />
+            <label for="reserved_1" class="card_restaurant">
+              <div class="card_container__title">
+                <h4>Bouchée de homard croustillant</h4>
+                <div class="card_container__txt">
+                  <div class="card_container__content">
+                    <p>Et sa farandole de petits légumes</p>
+                  </div>
+
+                  <h4>35<i class="fa-solid fa-euro-sign"></i></h4>
+                </div>
+              </div>
+              <div class="card_container__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </label>
           </div>
-          <div class="card_restaurant">
-            <h4>Poulet rôti aux herbes de Provence</h4>
-            <p>Et sa crème de truffe</p>
+          <!--3eme-->
+          <div class="card_container">
+            <input type="checkbox" id="reserved_2" />
+            <label for="reserved_2" class="card_restaurant">
+              <div class="card_container__title">
+                <h4>Velouté de cèpes</h4>
+                <div class="card_container__txt">
+                  <div class="card_container__content"><p>Aux truffes</p></div>
+
+                  <h4>20<i class="fa-solid fa-euro-sign"></i></h4>
+                </div>
+              </div>
+              <div class="card_container__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </label>
           </div>
         </section>
         <!--les plats-->
         <section class="plats">
           <div class="plats__title"><p>Plats</p></div>
-          <div class="card_restaurant">
-            <h4>Poulet rôti aux herbes de Provence</h4>
-            <p>Et sa crème de truffe</p>
+          <div class="Deco__Line__Content"><hr class="deco-line" /></div>
+          <!--1er-->
+          <div class="card_container">
+            <input type="checkbox" id="reserved_3" />
+            <label for="reserved_3" class="card_restaurant">
+              <div class="card_container__title">
+                <h4>Poulet rôti aux herbes de Provence</h4>
+                <div class="card_container__txt">
+                  <div class="card_container__content">
+                    <p>Et sa crème de truffe</p>
+                  </div>
+
+                  <h4>40<i class="fa-solid fa-euro-sign"></i></h4>
+                </div>
+              </div>
+              <div class="card_container__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </label>
           </div>
-          <div class="card_restaurant">
-            <h4>Langouste rôtie</h4>
-            <p>Et ses légumes de saison</p>
+
+          <!--2eme-->
+          <div class="card_container">
+            <input type="checkbox" id="reserved_4" />
+            <label for="reserved_4" class="card_restaurant">
+              <div class="card_container__title">
+                <h4>Langouste rôtie</h4>
+                <div class="card_container__txt">
+                  <div class="card_container__content">
+                    <p>Et ses légumes de saison</p>
+                  </div>
+
+                  <h4>35<i class="fa-solid fa-euro-sign"></i></h4>
+                </div>
+              </div>
+              <div class="card_container__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </label>
           </div>
-          <div class="card_restaurant">
-            <h4>Côte de bœuf Angus</h4>
-            <p>Et sa purée de panais</p>
+
+          <!--3eme-->
+          <div class="card_container">
+            <input type="checkbox" id="reserved_5" />
+            <label for="reserved_5" class="card_restaurant">
+              <div class="card_container__title">
+                <h4>Côte de bœuf Angus</h4>
+                <div class="card_container__txt">
+                  <div class="card_container__content">
+                    <p>Et sa purée de panais</p>
+                  </div>
+
+                  <h4>44<i class="fa-solid fa-euro-sign"></i></h4>
+                </div>
+              </div>
+              <div class="card_container__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </label>
           </div>
         </section>
         <!--les desserts-->
         <section class="plats">
           <div class="plats__title"><p>Desserts</p></div>
-          <div class="card_restaurant">
-            <h4>Farandole de desserts</h4>
-            <p>Du chef</p>
+          <div class="Deco__Line__Content"><hr class="deco-line" /></div>
+          <!--1er-->
+          <div class="card_container">
+            <input type="checkbox" id="reserved_6" />
+            <label for="reserved_6" class="card_restaurant">
+              <div class="card_container__title">
+                <h4>Farandole de desserts</h4>
+                <div class="card_container__txt">
+                  <div class="card_container__content"><p>Du chef</p></div>
+
+                  <h4>18<i class="fa-solid fa-euro-sign"></i></h4>
+                </div>
+              </div>
+              <div class="card_container__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </label>
           </div>
-          <div class="card_restaurant">
-            <h4>Crème brulée</h4>
-            <p>Revisitée</p>
+          <!--2eme-->
+          <div class="card_container">
+            <input type="checkbox" id="reserved_7" />
+            <label for="reserved_7" class="card_restaurant">
+              <div class="card_container__title">
+                <h4>Crème brulée</h4>
+                <div class="card_container__txt">
+                  <div class="card_container__content"><p>Revisitée</p></div>
+
+                  <h4>22<i class="fa-solid fa-euro-sign"></i></h4>
+                </div>
+              </div>
+              <div class="card_container__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </label>
           </div>
-          <div class="card_restaurant">
-            <h4>Tiramisu</h4>
-            <p>À la noisette</p>
+
+          <!--3eme-->
+          <div class="card_container">
+            <input type="checkbox" id="reserved_8" />
+            <label for="reserved_8" class="card_restaurant">
+              <div class="card_container__title">
+                <h4>Tiramisu</h4>
+                <div class="card_container__txt">
+                  <div class="card_container__content">
+                    <p>À la noisette</p>
+                  </div>
+
+                  <h4>23<i class="fa-solid fa-euro-sign"></i></h4>
+                </div>
+              </div>
+              <div class="card_container__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </label>
+          </div>
+          <div class="div__button__commander">
+            <button class="commander">Commander</button>
           </div>
         </section>
       </section>
@@ -88,10 +230,12 @@
       <div class="footer__txt">
         <p>
           <span class="txt"
-            ><i class="fa-solid fa-utensils"></i> Proposer un restaurant</span
+            ><i class="fa-solid fa-utensils fa-xs"></i> Proposer un
+            restaurant</span
           >
           <span class="txt"
-            ><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</span
+            ><i class="fa-solid fa-handshake-angle fa-xs"></i>Devenir
+            partenaire</span
           >
           <span class="txt">Mentions légales</span>
           <span class="txt">Contact</span>
