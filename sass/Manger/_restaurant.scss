@@ -2,12 +2,20 @@
   text-decoration: none;
   color: black;
 }
+.heart_container__restaurant {
+  height: auto;
+  display: flex;
+  align-items: center;
+  right: 10px;
+  bottom: -20px;
+}
 .main__container__Page {
   max-width: 1440px;
 }
 .main_i {
   position: relative;
 }
+
 .main__container {
   width: 100%;
   border-radius: 40px 40px 0 0;
@@ -151,6 +159,11 @@ input[type="checkbox"]:checked ~ .card_restaurant .card_container__content p {
 
 //media queries//
 @media screen and (min-width: 768px) {
+
+  .heart_container__restaurant {
+  right: -20px;
+  bottom: -16px;
+}
   .main_i {
     display: flex;
     justify-content: center;

@@ -57,6 +57,10 @@
   border: none;
   background: linear-gradient($color-purple, $color-pink);
   color: $color-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 @mixin button-choice {
   width: 100%;

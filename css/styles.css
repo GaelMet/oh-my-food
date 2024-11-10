@@ -141,6 +141,14 @@ body {
   color: black;
 }
 
+.heart_container__restaurant {
+  height: auto;
+  display: flex;
+  align-items: center;
+  right: 10px;
+  bottom: -20px;
+}
+
 .main__container__Page {
   max-width: 1440px;
 }
@@ -305,6 +313,10 @@ input[type=checkbox]:checked ~ .card_restaurant .card_container__content p {
 }
 
 @media screen and (min-width: 768px) {
+  .heart_container__restaurant {
+    right: -20px;
+    bottom: -16px;
+  }
   .main_i {
     display: flex;
     justify-content: center;
@@ -418,6 +430,7 @@ input[type=checkbox]:checked ~ .card_restaurant .card_container__content p {
   margin: 0;
   font-family: "roboto", sans-serif;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -444,14 +457,7 @@ html {
   text-align: center;
   margin-bottom: 10px;
 }
-
-.main p {
-  font-size: 18px;
-  font-weight: 300;
-  text-align: center;
-}
-
-.main > button {
+.main__container__button {
   width: 218px;
   height: 50px;
   border-radius: 30px;
@@ -459,6 +465,16 @@ html {
   border: none;
   background: linear-gradient(#9356dc, #ff79da);
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.main p {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
 }
 
 .fa-store {
@@ -554,8 +570,11 @@ html {
 }
 
 .restaurants__card a {
+  display: block;
+  height: 251px;
   text-decoration: none;
   color: black;
+  position: relative;
 }
 
 .restaurants h2 {
@@ -581,10 +600,14 @@ html {
   border-radius: 15px 15px 0 0;
   object-fit: cover;
 }
-.cards .cards__txt {
+.cards__txt {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80px;
 }
-.cards .cards__title {
+.cards__title {
   display: flex;
   justify-content: space-between;
   padding-right: 10px;
@@ -606,36 +629,66 @@ html {
 }
 
 .heart_container {
-  display: inline-block;
-  position: relative;
+  height: 50px;
+  width: 50px;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
-input.checkbox {
-  position: relative;
+input {
   display: none;
 }
 
+.checkbox {
+  display: flex;
+  position: absolute;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
 .heart-icon {
-  position: relative;
-  transition: color 0.3s ease;
+  position: absolute;
+  transition: color 0.3 ease;
 }
 
 .heart-full {
   position: absolute;
   color: rgb(143, 6, 136);
   opacity: 0;
-  top: 10px;
-  right: 0;
-  transition: opacity 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-input.checkbox:checked + .heart-icon {
+input.checkbox:checked ~ .heart-icon {
   opacity: 0;
 }
 
 input.checkbox:checked ~ .heart-full {
-  animation: click_heart 0.3 forwards;
+  opacity: 1;
+  animation: click_heart 0.3s forwards;
+}
+
+.heart-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: -37px;
+}
+
+.main__cards {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.heart {
+  height: 25px;
+  width: 50px;
+  position: absolute;
+  right: 0px;
+  bottom: 15px;
 }
 
 @keyframes click_heart {
