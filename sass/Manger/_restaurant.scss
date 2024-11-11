@@ -29,11 +29,11 @@
     font-weight: 500;
     padding: 30px 0 20px;
   }
-  &__h2 {
+  &__title {
     display: flex;
     justify-content: space-between;
   }
-  &__h2 i {
+  &__title i {
     display: flex;
     align-items: center;
     padding: 10px 20px;
@@ -176,7 +176,7 @@ input[type="checkbox"]:checked ~ .card_restaurant .card_container__content p {
   .main__container .card_restaurant {
     background-color: $color-secondary;
   }
-  .main__container__h2 {
+  .main__container__title {
     justify-content: center;
     i {
       margin-top: 10px;
