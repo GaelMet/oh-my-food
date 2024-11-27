@@ -184,18 +184,23 @@ body {
 .card_container {
   position: relative;
   margin-bottom: 10px;
+  border: 2px solid rebeccapurple;
+  display: flex;
+  background-color: f3f3f3;
 }
 .card_container h4 {
   padding: 0 10px;
 }
 .card_container__title {
+  border: 2px solid magenta;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   white-space: nowrap;
   transition: width 0.5s ease-in-out;
   gap: 5px;
+  background-color: #f3f3f3;
 }
 .card_container__txt {
   display: flex;
@@ -213,6 +218,7 @@ body {
   transition: max-width 0.5 ease;
 }
 .card_container__check {
+  border: 2px solid red;
   width: 0;
   height: 100%;
   background-color: #99e2d0;
@@ -226,11 +232,10 @@ body {
 }
 
 .card_restaurant {
-  width: 100%;
+  border: 2px solid yellowgreen;
   height: 69px;
   background-color: #f3f3f3;
   border-radius: 20px;
-  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -239,6 +244,7 @@ body {
   overflow: hidden;
   cursor: pointer;
   transition: width 0.5s ease-out;
+  width: 100%;
 }
 
 input[type=checkbox] {
@@ -252,19 +258,23 @@ input[type=checkbox] {
 }
 
 input[type=checkbox]:checked ~ .card_restaurant .card_container__check {
-  width: 20%; /* 20% de la largeur totale */
+  width: 15%;
 }
 
 input[type=checkbox]:checked ~ .card_restaurant .card_container__check i {
   opacity: 1;
 }
 
-input[type=checkbox]:checked ~ .card_restaurant .card_container__content p {
+input[type=checkbox]:checked + .card_restaurant .card_container__txt .card_container__content p {
   max-width: 190px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  transition: width 0.5s ease-out;
+  transition: max-width 0.5s ease-out;
+}
+
+input[type=checkbox]:checked + .card_restaurant .card_container__title {
+  border-radius: 20px 0 0 20px;
 }
 
 .plats {
@@ -360,11 +370,9 @@ input[type=checkbox]:checked ~ .card_restaurant .card_container__content p {
   .card_restaurant:hover .card_container__check i {
     opacity: 1;
   }
-  input[type=checkbox]:checked ~ .card_restaurant .card_container__content p {
+  input[type=checkbox]:checked + .card_restaurant .card_container__txt .card_container__content p {
+    text-overflow: unset;
     max-width: 100%;
-    text-overflow: clip;
-    white-space: nowrap;
-    overflow: hidden;
   }
 }
 .loading {

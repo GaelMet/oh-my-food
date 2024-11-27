@@ -43,17 +43,22 @@
 .card_container {
   position: relative; //sert a montre les icones//
   margin-bottom: 10px;
+   border: 2px solid rebeccapurple;
+   display: flex;
+   background-color: f3f3f3;
   h4 {
     padding: 0 10px;
   }
   &__title {
+    border: 2px solid magenta;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     white-space: nowrap;
     transition: width 0.5s ease-in-out;
     gap: 5px;
+    background-color: #f3f3f3;
   }
   &__txt {
     display: flex;
@@ -71,6 +76,7 @@
     transition: max-width 0.5 ease;
   }
   &__check {
+    border: 2px solid red ;
     width: 0;
     height: 100%;
     background-color: $color-lightGreen;
@@ -84,8 +90,8 @@
   }
 }
 .card_restaurant {
+  border: 2px solid yellowgreen;
   @include card_restaurant;
-  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -94,6 +100,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: width 0.5s ease-out;
+  width: 100%;
 }
 input[type="checkbox"] {
   display: none;
@@ -106,17 +113,20 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked ~ .card_restaurant .card_container__check {
-  width: 20%; /* 20% de la largeur totale */
+  width: 15%;
 }
 input[type="checkbox"]:checked ~ .card_restaurant .card_container__check i {
   opacity: 1;
 }
-input[type="checkbox"]:checked ~ .card_restaurant .card_container__content p {
+input[type="checkbox"]:checked + .card_restaurant .card_container__txt .card_container__content p {
   max-width: 190px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; // Affiche les ellipses
-  transition: width 0.5s ease-out;
+  transition: max-width 0.5s ease-out;
+}
+input[type="checkbox"]:checked + .card_restaurant .card_container__title {
+  border-radius: 20px 0 0 20px
 }
 
 .plats {
@@ -157,6 +167,15 @@ input[type="checkbox"]:checked ~ .card_restaurant .card_container__content p {
   font-family: "shrikhand", sans-serif;
 }
 
+
+
+
+
+
+
+
+
+
 //media queries//
 @media screen and (min-width: 768px) {
 
@@ -189,6 +208,7 @@ input[type="checkbox"]:checked ~ .card_restaurant .card_container__content p {
     justify-items: center; //permet de centre mes card//
   }
   .card_container {
+   
     max-width: 634px;
     width: 100%;
   }
@@ -208,10 +228,9 @@ input[type="checkbox"]:checked ~ .card_restaurant .card_container__content p {
   .card_restaurant:hover .card_container__check i {
     opacity: 1; // pour que le fa-circle-check apparait//
   }
-  input[type="checkbox"]:checked ~ .card_restaurant .card_container__content p {
-    max-width: 100%; // permet de ne pas couper une partie de mon texte//
-    text-overflow: clip;
-    white-space: nowrap;
-    overflow: hidden;
-  }
+  
+  input[type="checkbox"]:checked + .card_restaurant .card_container__txt .card_container__content p {
+  text-overflow:unset; // Affiche les ellipses
+  max-width: 100%; // permet de ne pas couper une partie de mon texte//
+}
 }
