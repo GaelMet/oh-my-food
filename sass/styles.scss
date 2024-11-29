@@ -5,7 +5,6 @@
 @import "Layouts/footer";
 @import "Base/general";
 @import "Manger/restaurant";
-@import "Components/chargement";
 * {
   padding: 0;
   margin: 0;
@@ -16,12 +15,92 @@
 html {
   height: 100%;
 }
+
+//chargement//
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  animation: masquer 1s ease-in-out 2s forwards;
+}
+
+@keyframes masquer {
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+}
+
+
+@keyframes demasquer {
+  100%{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+}
+.element {
+  width: 200px;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Crée 4 colonnes de taille égale */
+  grid-template-rows: auto auto;
+  padding: 20px;
+  justify-items: center;
+  align-items: center;
+}
+.ball_txt {
+  text-align: center;
+  font-family: "shrikhand", sans-serif;
+  font-size: 18px;
+  background: linear-gradient(to right, #99e2d0, #89c8fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /*permet d'avoir le text en graduee*/
+  grid-column: 1/-1; /*fusionne toutes les cellules*/
+}
+
+.ball:nth-child(even) {
+  border: 2px solid #99e2d0;
+  animation-delay: 0.1s;
+}
+.ball:nth-child(odd) {
+  border: 2px solid #89c8fa;
+  animation-delay: 0.2s;
+}
+.ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 20% 40%;
+  margin-bottom: 20px;
+  animation: animationBall 0.5s infinite alternate; /*alternante permet de ne pas sacader*/
+}
+@keyframes animationBall {
+  0% {
+    transform: translateY(0%) rotateY(0deg);
+  }
+  100% {
+    transform: translateY(50%) rotateY(50deg); //decaler a droite & rotation a droite //
+  }
+}
  
 .main__container__index {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out;
+   animation: demasquer 1s ease-in-out 3s forwards;
 }
+
 
 .main {
   background-color: $color-principal;
