@@ -112,7 +112,6 @@ footer {
     flex-direction: row-reverse;
     align-items: flex-end;
     justify-content: flex-start;
-    gap: 0 20px 0 50px;
   }
   .footer {
     margin: 0 30px;
@@ -154,13 +153,15 @@ body {
 }
 
 .main_i {
+  background-color: #f3f3f3;
+  border-radius: 40px 40px 0 0;
   position: relative;
 }
 
 .main__container {
   width: 100%;
   border-radius: 40px 40px 0 0;
-  background-color: #ffffff;
+  background-color: #f3f3f3;
   position: relative;
   z-index: 2;
   padding: 10px;
@@ -184,15 +185,14 @@ body {
 .card_container {
   position: relative;
   margin-bottom: 10px;
-  border: 2px solid rebeccapurple;
   display: flex;
-  background-color: f3f3f3;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .card_container h4 {
   padding: 0 10px;
 }
 .card_container__title {
-  border: 2px solid magenta;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -200,7 +200,6 @@ body {
   white-space: nowrap;
   transition: width 0.5s ease-in-out;
   gap: 5px;
-  background-color: #f3f3f3;
 }
 .card_container__txt {
   display: flex;
@@ -215,10 +214,10 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   width: auto;
-  transition: max-width 0.5 ease;
+  transition: max-width 0.5s ease;
 }
 .card_container__check {
-  border: 2px solid red;
+  border: 0.1px solid white;
   width: 0;
   height: 100%;
   background-color: #99e2d0;
@@ -232,7 +231,6 @@ body {
 }
 
 .card_restaurant {
-  border: 2px solid yellowgreen;
   height: 69px;
   background-color: #f3f3f3;
   border-radius: 20px;
@@ -245,6 +243,7 @@ body {
   cursor: pointer;
   transition: width 0.5s ease-out;
   width: 100%;
+  background-color: #ffffff;
 }
 
 input[type=checkbox] {
@@ -258,7 +257,7 @@ input[type=checkbox] {
 }
 
 input[type=checkbox]:checked ~ .card_restaurant .card_container__check {
-  width: 15%;
+  width: 20%;
 }
 
 input[type=checkbox]:checked ~ .card_restaurant .card_container__check i {
@@ -271,10 +270,6 @@ input[type=checkbox]:checked + .card_restaurant .card_container__txt .card_conta
   white-space: nowrap;
   text-overflow: ellipsis;
   transition: max-width 0.5s ease-out;
-}
-
-input[type=checkbox]:checked + .card_restaurant .card_container__title {
-  border-radius: 20px 0 0 20px;
 }
 
 .plats {
@@ -323,6 +318,10 @@ input[type=checkbox]:checked + .card_restaurant .card_container__title {
 }
 
 @media screen and (min-width: 768px) {
+  header {
+    position: relative;
+    z-index: 1;
+  }
   .heart_container__restaurant {
     right: -20px;
     bottom: -16px;
@@ -330,6 +329,7 @@ input[type=checkbox]:checked + .card_restaurant .card_container__title {
   .main_i {
     display: flex;
     justify-content: center;
+    background-color: #ffffff;
   }
   .main__container {
     width: 75%;
@@ -671,7 +671,7 @@ input {
 
 .heart-icon {
   position: absolute;
-  transition: color 0.3 ease;
+  transition: color 0.3s ease;
 }
 
 .heart-full {
